@@ -20,14 +20,14 @@ const Dashboard = () => {
 
   const fetchSubs = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/subscriptions?userId=${userId}`);
+      const res = await axios.get(`https://billora-backend-w0mr.onrender.com/api/subscriptions?userId=${userId}`);
       setSubs(res.data.sort((a, b) => Number(b.isStarred) - Number(a.isStarred)));
     } catch (err) { console.error(err); }
   };
 
   const togglePause = async (id, currentStatus) => {
     const newStatus = currentStatus === 'Active' ? 'Paused' : 'Active';
-    await axios.put(`http://localhost:5000/api/subscriptions/${id}`, { status: newStatus });
+    await axios.put(`https://billora-backend-w0mr.onrender.com/api/subscriptions/${id}`, { status: newStatus });
     fetchSubs();
   };
 
@@ -46,13 +46,13 @@ const Dashboard = () => {
   };
 
   const toggleStar = async (id, currentStatus) => {
-    await axios.put(`http://localhost:5000/api/subscriptions/${id}`, { isStarred: !currentStatus });
+    await axios.put(`https://billora-backend-w0mr.onrender.com/api/subscriptions/${id}`, { isStarred: !currentStatus });
     fetchSubs();
   };
 
   const deleteSub = async (id) => {
     if (window.confirm("Delete this subscription?")) {
-      await axios.delete(`http://localhost:5000/api/subscriptions/${id}`);
+      await axios.delete(`https://billora-backend-w0mr.onrender.com/api/subscriptions/${id}`);
       fetchSubs();
     }
   };

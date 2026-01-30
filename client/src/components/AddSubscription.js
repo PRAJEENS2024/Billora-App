@@ -27,10 +27,10 @@ const AddSubscription = ({ onAdded, onCancel, initialData }) => {
     e.preventDefault();
     try {
       if (initialData) {
-        await axios.put(`http://localhost:5000/api/subscriptions/${initialData._id}`, formData);
+        await axios.put(`https://billora-backend-w0mr.onrender.com/api/subscriptions/${initialData._id}`, formData);
         alert("Subscription Updated!");
       } else {
-        await axios.post('http://localhost:5000/api/subscriptions', { ...formData, userId });
+        await axios.post('https://billora-backend-w0mr.onrender.com/api/subscriptions', { ...formData, userId });
         alert("Subscription Added!");
       }
       onAdded(); 

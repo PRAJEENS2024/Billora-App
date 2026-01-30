@@ -12,7 +12,7 @@ const Analytics = () => {
   useEffect(() => {
     const fetchSubs = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/subscriptions?userId=${userId}`);
+        const res = await axios.get(`https://billora-backend-w0mr.onrender.com/api/subscriptions?userId=${userId}`);
         setSubs(res.data);
       } catch (err) { console.error(err); }
     };
