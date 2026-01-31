@@ -69,19 +69,6 @@ cd client
 npm install
 npm start
 
-```
 
----
-
-## 🔮 Future Roadmap (v2.0)
-
-* [ ] **Email Alerts:** Notifications 3 days before a bill payment is due.
-* [ ] **Google Login:** OAuth integration for one-click sign-in.
-* [ ] **Export Data:** Download monthly expense reports as CSV/Excel.
-* [ ] **Multi-Currency:** Toggle between ₹ (INR), $ (USD), and € (EUR).
-
----
-
-```
 
 ```
